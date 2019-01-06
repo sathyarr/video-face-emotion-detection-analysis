@@ -1,7 +1,11 @@
 function resizeCanvasAndResults(dimensions, canvas, results) {
-  const { width, height } = dimensions instanceof HTMLVideoElement
+  /*const { width, height } = dimensions instanceof HTMLVideoElement
     ? faceapi.getMediaDimensions(dimensions)
-    : dimensions
+    : dimensions*/
+
+  const width = dimensions.offsetWidth;
+  const height = dimensions.offsetHeight;
+
   canvas.width = width
   canvas.height = height
 
@@ -12,7 +16,7 @@ function resizeCanvasAndResults(dimensions, canvas, results) {
 
 function drawDetections(dimensions, canvas, detections) {
   const resizedDetections = resizeCanvasAndResults(dimensions, canvas, detections)
-  faceapi.drawDetection(canvas, resizedDetections)
+  faceapi.drawDetection(canvas, resizedDetections.map(det => det.detection))
 }
 
 function drawLandmarks(dimensions, canvas, results, withBoxes = true) {
