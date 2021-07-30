@@ -28,7 +28,7 @@ For all the faces, it calculates the possible emotion through various algorithms
 3. Show or hide bounding box over the face
 4. Show or hide facial landmarks if needed
 
-<b>How to Run:</b>
+# How to Run:
 1. Download the project locally
 2. Navigate to <code>/examples/examples-browser/</code>
 3. Open Terminal and run <code>npm i</code>, <code>npm start</code>
